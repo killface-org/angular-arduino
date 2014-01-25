@@ -7,9 +7,11 @@ Make sure you have NodeJS [installed](https://github.com/joyent/node/wiki/Instal
 
 open a terminal, and move to a directory for cloning the repo.
 
-  git clone https://github.com/killface-org/angular-arduino.git
-  cd angular-arduino
-  npm install
+```
+git clone https://github.com/killface-org/angular-arduino.git
+cd angular-arduino
+npm install
+```
 
 ## Running
 
@@ -19,9 +21,10 @@ ip addresses for connections, and maybe adjusting some of the PIN constants.
 
 Then open up a couple of terminals. 
 
+```
   cd server
   node web-server.js
   //in a seperate shell (terminal)
   node arduino-socket-server.js
-  
+```  
 
