@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <title>Arduino Control</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div id="MainPage" class="container" ng-controller="MainPage as mainPage">
+        <div class="row well">
+            <button  type="button" class="btn btn-lg btn-block"
+                     ng-class="{'btn-danger':(mainPage.redState == 1),'btn-default':(mainPage.redState == 0)}"
+                     ng-click="mainPage.onRedClick()">RED</button>
+            <button  type="button" class="btn btn-lg btn-block"
+                     ng-class="{'btn-success':(mainPage.greenState == 1),'btn-default':(mainPage.greenState == 0)}"
+                     ng-click="mainPage.onGreenClick()">GREEN</button>
+            <button  type="button" class="btn btn-lg btn-block"
+                     ng-class="{'btn-primary':(mainPage.blueState == 1),'btn-default':(mainPage.blueState == 0)}"
+                     ng-click="mainPage.onBlueClick()">BLUE</button>
+        </div>
+        <div class="row">
+            <div class="input-group well">
+                <input type="text" class="form-control" ng-model="mainPage.lcdText" ng-change="mainPage.setLCDText()">
+                <span class="input-group-addon">LCD TEXT</span>
+            </div>
+        </div>
+    </div>
+<!-- Vendor Javascript Files -->
+<!---->
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-touch.js"></script>
+<script src="scripts/socket.io.js"></script>
+
+<!-- App Javascript Files -->
+<script src="js/app.js"></script>
+</body>
+</html>
